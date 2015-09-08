@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+    {% for article in articles_page.object_list %}
+        {% if loop.index < 7 %}
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+        <meta itemprop="inLangage" content="français"/>
+        <header>
+            <h1><a href="{{ SITEURL }}/{{ article.url }}" itemprop="url"><span itemprop="name">{{ article.title }}</span></a></h1>
+            <p class="notimportant">Rédigé par <a href="index.html"><span itemprop="creator">{{ article.author }}</span></a> dans <a href="{{ SITEURL }}/{{ article.category.url }}" class="label label-warning" >{{ article.category }}</a></p>
+            <p>
+            <span class="notimportant">tags:</span>
+                {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/tag/{{ tag.slug }}.html" class="label label-info">{{ tag }}</a>
+                {% endfor %}
+            </p>
+
+        </header>
+        <section itemprop="text">
+            {{ article.summary }}
+        </section>
+        <footer class="postmeta">
+            <a href="../{{ article.url }}" class="readmore">Lire la suite</a> |
+            <span class="comments"><a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Commentaires</a></span> |
+            <span class="date">{{ article.date.strftime('%d-%m-%Y') }}</span>
+        </footer>
+    </article>
+    {% endif %}
+    {% endfor %}
+{% include 'pagination.html' %}
+{% endblock %}

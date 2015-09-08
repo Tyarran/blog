@@ -1,0 +1,19 @@
+Démarrer proprement un nouveau projet Python avec Skeleton
+==========================================================
+:date: 2013-07-25
+:tags: Programmation, Projet, Développement, Python, démarrage
+
+.. role:: strike
+    :class: strike
+
+Démarrer un nouveau projet, peu importe le langage, est toujours un peu délicat. On a souvent la
+tête pleine de nouvelles d'idées et on trépigne d'impatience d' écrire les quelques lignes de code qui vont
+changer la face du monde.
+
+En revanche, il y a une étape pas forcement très sexy, mais obligatoire: la préparation du projet. À moins
+d'utiliser un IDE qui mâche le travail, cela peut prendre un peu de temps.
+
+Alors, pour ne pas :strike:`trop` ce prendre la tête, il existe des outils qui vont nous faciliter la vie: Skeleton.
+
+L'objectif et simple, vous poser quelques questions et créer un squelette d'application vierge.
+

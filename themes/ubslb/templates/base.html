@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% set STATICURL = "http://www.rcommande.org/static/" %}
+    <meta charset="utf-8">
+    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ SITEURL }}/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon.gif" />
+    <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATICURL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/style.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href="{{ SITEURL }}/theme/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+    <script type="text/javascript" src="{{ SITEURL }}/theme/js/jqFancyTransitions.1.8.min.js" ></script>
+    <script type="text/javascript" src="{{ SITEURL }}/js/jquery.scrollTo-1.4.2-min.js" ></script>
+    <script type="text/javascript" src="{{ SITEURL }}/js/jquery.localscroll-1.2.7-min.js" ></script>
+</head>
+
+<body>
+    {% include "github.html" %} 
+
+<div class="container" style="margin-top: 60px;">
+    <div class="content" >
+    <div class="row">
+
+        <div class="span9">
+        {% block content %}{% endblock %}
+        </div>
+        
+        <div class="span3">
+
+            {% if categories %}
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav list">
+                <li class="nav-header"> 
+                Catégories
+                </li>
+                
+                {% for cat, null in categories %}
+                <li style="text-indent: 10px;"><a href="{{ SITEURL }}/{{ cat.url}}">{{ cat }}</a></li>
+                {% endfor %}                   
+            </ul>
+            </div>
+            {% endif %}
+
+            
+            {% if LINKS %}
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav list">
+                <li class="nav-header"> 
+                Liens
+                </li>
+            
+            {% for name, link in LINKS %}
+                <li style="text-indent: 10px;"><a href="{{ link }}" target="_blank" >{{ name }}</a></li>
+            {% endfor %}
+            </ul>
+            </div>
+            {% endif %}
+
+            {% if SOCIAL %}
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav list">
+                <li class="nav-header"> 
+                Abonnement
+                </li>
+            
+                <li style="text-indent: 10px;"><a href="{{ SITEURL }}/{{ FEED }}" rel="alternate" target="_blank" >atom feed</a></li>
+                {% if FEED_RSS %}
+                <li style="text-indent: 10px;"><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate" target="_blank" >rss feed</a></li>
+                {% endif %}
+            </ul>
+            </div>
+            </div>
+            {% endif %}
+        </div> {# End span3 #} 
+    </div> {# End row #}
+    </div> {# End content #}
+</div>
+<footer>
+{% include "disqus.html" %}
+</body>
+</html>

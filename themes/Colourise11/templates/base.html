@@ -1,0 +1,148 @@
+<!DOCTYPE html >
+<html lang="en">
+    <head>
+        <title>{% if article is defined %}{{ article.title }} |{% elif not page_name == 'index' %}{{ page_name }}  |{% endif %} {{ SITENAME }}, éleveur de pythons sur la banquise</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Commandé" />
+        {% if page_name == 'index' %}
+        <meta name="description" content="Le blog de Romain Commandé. Développement Python, astuces et geekeries en tout genre" />
+        {% endif %}
+        <meta name="generator" content="Pelican" />
+        <meta name="keywords" content="{% for tag in tag_cloud %}{% if loop.last %}{{ tag.0 }}{% else %}{{ tag.0 }}, {% endif %}{% endfor %}" />
+        <meta name="robots" content="index, follow, archive" />
+        <meta name="robots" content="all" />
+        <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/bootstrap/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/tomorrow_night.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/darkstrap.css" type="text/css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/images/Colourise.css" type="text/css" />
+        <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon.gif" />
+    </head>
+    <body>
+        <!-- wrap starts here -->
+        <div id="wrap">
+
+            <!--header -->
+            <div id="header" itemscope itemtype="http://schema.org/Person">
+
+                <h1 id="logo-text"><a href="{{ SITEURL }}/index.html" title="">Romain Commandé</a></h1>
+                <p id="intro" itemprop="title">
+                    Éleveur de pythons sur la banquise
+                </p>
+                <meta itemprop="url" content="{{ SITEURL }}"/>
+                <meta itemprop="name" content="Romain Commandé"/>
+                <meta itemprop="nickname" content="Rcommande"/>
+                <meta itemprop="role" content="Ingénieur développeur"/>
+                <meta itemprop="affiliation" content="Mappy"/>
+
+                <div  id="nav">
+                    {% include "nav.html" %}
+                </div>
+
+                <!--header ends-->
+            </div>
+
+            <!-- content-wrap starts -->
+            <div id="content-wrap">
+                <ul id="categories">
+                    {% for category, article in categories %}
+                    <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <section id="main">
+                    {% block main %}{% endblock %}
+                </section>
+            </div>
+
+            <!-- footer starts here -->
+            <footer id="footer-wrap">
+                <div id="footer-content">
+
+                        <div class="col float-left space-sep">
+
+                            <h3 id="link">Liens</h3>
+
+                            <p>J'aurais adorer écrire ces différents sites, blogs, etc... Mais ça n'est pas le cas. Découvrez les contenus de personnes talentueuses</p>
+
+                            <ul class="col-list">
+                                {% if LINKS %}
+                                {% for name, link in LINKS %}
+                                <li><a href="{{ link }}" target="_blank" title="{{ name }}" >{{ name }}</a></li>
+                                {% endfor %} {% endif %}
+                            </ul>
+
+                            <p>
+                            <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"><img src="{{ SITEURL }}/theme/images/feeds.png" />Abonnez-vous !</a>
+                            </p>
+
+                        </div>
+
+                        <div class="col float-left cloud">
+                            <h3 id="tags">Tags</h3>
+                                {% for tag in tag_cloud %}
+                                <a class="tag-{{ tag.1 }}" href="{{ SITEURL }}/tag/{{ tag.0.slug }}.html" >{{ tag.0 }}</a>
+                                {% endfor %}
+                        </div>
+
+                        <div class="col2 float-right">
+
+                            <h3 id="credits">Crédits</h3>
+
+                            <p>
+                                Thème basé sur <a href="http://demo.themelab.com/" target="_blank" >Colourise11</a>
+                                <br />
+                                CSS modifié en utilisant <a href="http://danneu.com/bag/darkstrap/darkstrap.html" target="_blank" >Darkstrap</a>
+                            </p>
+
+                        </div>
+
+                </div></div>
+                <div class="clearer"></div>
+                <div id="bottom-text">
+                    <a href="https://plus.google.com/111883762083872540656" rel="me">Romain Commandé</a>
+                    <br />
+                    Proudly powered by <a target="_blank" href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a target="_blank" href="http://python.org">Python</a>.
+                    <br />
+                    Sauf mention particulière, le contenu de ce site est mis à disposition selon les termes de la
+                    <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license">licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 non transposé</a>.
+                    <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license">
+                </div>
+                <!-- footer ends here -->
+
+                <!-- wrap ends here -->
+        </footer>
+    </body>
+
+    <!--Search Engine-->
+    <script src="{{ SITEURL }}/theme/js/jquery-1.9.1.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/rcommande.js"></script>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'unblogsurlabanquise'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    {# Analytics #}
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-41203983-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    {% block external_js %}{% endblock %}
+</html>

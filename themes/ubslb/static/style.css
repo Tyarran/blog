@@ -1,0 +1,14 @@
+body{font-family:'Ubuntu';font-size:16px;}
+.footer_style{text-align:center;background-color:black;color:#FFFFFF;font-size:12px;}
+#footer{text-align:center;background-color:black;color:#FFFFFF;font-size:12px;}
+#copyright{text-align:center;background-color:black;color:#FFFFFF;font-size:12px;padding:5px;}
+.big{text-align:center;background-color:black;color:#FFFFFF;font-size:12px;height:235px;clear:both;background-image:url("/static/images/footer.png");border-bottom:1px solid #B1B1B1;margin-top:20px;padding-top:10px;}.big div{font-size:12px;text-align:center;}
+.big li{list-style-type:none;text-align:left;margin-top:5px;margin-bottom:5px;}
+.big ul{height:205px;overflow-x:auto;}
+#content{margin-top:50px;}#content th td{text-align:center;}
+#content section #legend{margin-bottom:65px;}#content section #legend .span4{text-align:center;}
+#content .rtop{margin-top:10px;display:block;text-align:center;}
+#content #nav li:hover{-webkit-transition:all 0.3s ease-in;-moz-transition:all 0.3s ease-in;-ms-transition:all 0.3s ease-in;-o-transition:all 0.3s ease-in;transition:all 0.3s ease-in;position:relative;top:3px;}
+#content #nav .nav-pills li{list-style-type:none;}
+#content #nav .nav-content{margin-left:auto;margin-right:auto;text-align:center;}
+pre {background-color: #000000;color: #F6F3E8}

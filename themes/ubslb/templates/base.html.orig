@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% set STATICURL = "http://www.rcommande.org/static/" %}
+    <meta charset="utf-8">
+    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ SITEURL }}/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <!--<link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="icon" type="image/png" href="{{ STATICURL }}/images/favicon.gif" />
+    <link href="{{ STATICURL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="{{ SITEURL }}/theme/bootstrap-responsive.min.css" rel="stylesheet">-->
+    <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href="{{ SITEURL }}/theme/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+    <script type="text/javascript" src="http://rcommande.org/static/js/jqFancyTransitions.1.8.min.js" ></script>
+    <script type="text/javascript" src="http://rcommande.org/static/js/jquery.scrollTo-1.4.2-min.js" ></script>
+    <script type="text/javascript" src="http://rcommande.org/static/js/jquery.localscroll-1.2.7-min.js" ></script>
+    <script type="text/javascript" langage="javascript">
+        function addTweets(data){
+            var tweetsNode = $("#tweets");
+            for (var i = 0; i < data.length; i++) {
+                tweetsNode.append("<li>" + data[i] + "</li>");
+            }
+        }
+        function addLastPost(data){
+            var lastBlogNode = $("#last_post"); 
+            for (var i = 0; i < data.length; i++) {
+                lastBlogNode.append("<li><a href='"+ data[i][1] + "' >" + data[i][0] + "</a></li>");
+            }
+
+        }
+        $("document").ready(function(){
+            $('#slideshowHolder').jqFancyTransitions({ width: 400, height: 300 });
+            $.localScroll();
+            $.ajax({
+                url: 'http://rcommande.org/api/last_blog_post',
+                dataType: 'jsonp',
+                success: addLastPost
+                });
+            $.ajax({
+                url: 'http://rcommande.org/api/last_twits',
+                dataType: 'jsonp',
+                success:addTweets,
+                });
+            $("#contact_form").live("submit", function(form){
+                form.preventDefault(); 
+                $(".load").css("display", "inline");
+                $.ajax({
+                    url: '/api/contact_send',
+                    type: 'POST',
+                    datType: "json",
+                    data: $(this).serialize(),
+                    success: function(data) {
+                                $("#send_result").html(data);
+                                $(".load").css("display", "none");
+                            },
+                    error: function(data){
+                                $("#send_result").text("une erreur est survenue");
+                                $(".load").css("display", "none");
+                            }
+                    })
+                });
+            });
+    </script>
+</head>
+
+<body>
+    {% include "github.html" %} 
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="brand">
+                <a href="#">
+                    <img src="{{ STATICURL }}images/avatar-small.jpg" alt="avatar" />&nbsp;rcommande
+                </a>
+                </div>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="http://blog.rcommande.org">blog</a>
+                        </li>
+                        <li>
+                            <a href="http://www.rcommande.org/me">Qui suis-je ?</a>
+                        </li>
+                        <li>
+                            <a href="http://www.rcommande.org/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container" style="margin-top: 60px;">
+    <div class="content" >
+    <div class="row">
+
+        <div class="span9">
+        {% block content %}{% endblock %}
+        </div>
+        
+        <div class="span3">
+
+            {% if categories %}
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav list">
+                <li class="nav-header"> 
+                Catégories
+                </li>
+                
+                {% for cat, null in categories %}
+                <li style="text-indent: 10px;"><a href="{{ SITEURL }}/category/{{ cat }}.html">{{ cat }}</a></li>
+                {% endfor %}                   
+            </ul>
+            </div>
+            {% endif %}
+
+            
+            {% if LINKS %}
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav list">
+                <li class="nav-header"> 
+                Liens
+                </li>
+            
+            {% for name, link in LINKS %}
+                <li style="text-indent: 10px;"><a href="{{ link }}" target="_blank" >{{ name }}</a></li>
+            {% endfor %}
+            </ul>
+            </div>
+            {% endif %}
+
+            {% if SOCIAL %}
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav list">
+                <li class="nav-header"> 
+                Social
+                </li>
+            
+                <li style="text-indent: 10px;"><a href="{{ SITEURL }}/{{ FEED }}" rel="alternate" target="_blank" >atom feed</a></li>
+                {% if FEED_RSS %}
+                <li style="text-indent: 10px;"><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate" target="_blank" >rss feed</a></li>
+                {% endif %}
+ 
+                {# for name, link in SOCIAL %}
+                <li><a href="{{ link }}" target="_blank" >{{ name }}</a></li>
+                {% endfor #}
+            </ul>
+            </div>
+            </div>
+            {% endif %}
+            
+
+            {# <h3>Documentation</h3> #}
+            {# <ul> #}
+            {# {% for page in PAGES %} #}
+            {# {% if page.category|lower == "documentation" %} #}
+            {#     <li><a href="{{ SITEURL }}/pages/{{ page.url }}">{{ page.title }}</a></li> #}
+            {# {% endif %} #}
+            {# {% endfor %} #}
+            {# </ul> #}
+
+        </div> {# End span3 #} 
+    </div> {# End row #}
+    </div> {# End content #}
+</div>
+
+<footer>
+<section class="big" style="background-image: url('http://www.rcommande.org/static/images/footer.png');">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <h4>Derniers billets</h4>
+                <ul id="last_post"></ul>
+            </div>
+            <div class="span4">
+                <h4>Où me retrouver</h4>
+                <ul>
+                    <li>
+                    <a target="_blank" href="http://www.twitter.com/rcommande">
+                            <img src="http://rcommande.org/static/images/twitter.png" alt="" />
+                            Twitter
+                        </a>
+                    </li>
+                    <li>
+                    <a target="_blank" href="http://www.facebook.com/rcommande">
+                            <img src="http://rcommande.org/static/images/facebook.png" alt="" />
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                    <a target="_blank" href="http://www.bitbucket.org/minimumserious">
+                            <img src="http://rcommande.org/static/images/bitbucket.png" alt="" />
+                            Bitbucket
+                        </a>
+                    </li>
+                    <li>
+                    <a target="_blank" href="http://www.lastfm.com/user/minimumserious">
+                            <img src="http://rcommande.org/static/images/lastfm.png" alt="" />
+                            LastFM
+                        </a>
+                    </li>
+                    <li>
+                    <a target="_blank" href="https://plus.google.com/111883762083872540656/posts">
+                            <img src="http://rcommande.org/static/images/googleplus.png" alt="" />
+                            Google+
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+            <div class="span4">
+                <h4>Derniers tweets</h4>
+                <ul id="tweets" ></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="copyright">
+<div>
+Site développé à l'aide de <a href="http://www.python.org">Python</a>, propulsé par <a href="http://www.pylonsproject.com">Pyramid</a> et hébergé dans mon salon !
+</div>
+<div>
+    Sauf mention particulière, le contenu de ce site est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 non transposé</a>.
+    <br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a>
+</div>
+</section>
+
+{% include "analytics.html" %}
+{% include "disqus.html" %}
+
+
+</body>
+</html>
