@@ -1,13 +1,24 @@
 language: python
+
+branches:
+  only:
+  - master
+
 python:
     - 3.4
+
 install:
     - pip install pelican
+    = ls -la
     - pelican-themes -s themes/Colourise11
+
 notifications:
   email:
     on_success: always
     on_failure: always
+
+sudo: required
+
 script:
     - make html
     - docker build -t rcommande/blog .
