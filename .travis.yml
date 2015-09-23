@@ -4,6 +4,10 @@ python:
 install:
     - pip install pelican
     - pelican-themes -s themes/Colourise11
+notifications:
+  email:
+    on_success: always
+    on_failure: always
 script:
     - make html
     - docker build -t rcommande/blog .
