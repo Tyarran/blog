@@ -1,0 +1,11 @@
+language: python
+python:
+    - 3.4
+install:
+    - pip install pelican
+    - pelican-themes -s themes/Colourise11
+script:
+    - make html
+    - docker build -t rcommande/blog .
+    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - docker push rcommande/blog
