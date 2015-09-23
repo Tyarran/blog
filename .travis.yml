@@ -9,7 +9,7 @@ python:
 
 install:
     - pip install pelican
-    = "ls -la"
+    - "ls -la"
     - pelican-themes -s themes/Colourise11
 
 notifications:
