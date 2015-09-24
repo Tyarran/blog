@@ -10,17 +10,15 @@ python:
 install:
     - pip install pelican
     - "ls -la"
-    - pelican-themes -s themes/Colourise11
+    - pelican-themes -s $TRAVIS_BUILD_DIR/blog/themes/Colourise11
 
 notifications:
   email:
     on_success: always
     on_failure: always
 
-sudo: required
-
 script:
     - make html
-    - docker build -t rcommande/blog .
+    - docker build -t rcommande/blog $TRAVIS_BUILD_DIR
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
     - docker push rcommande/blog
