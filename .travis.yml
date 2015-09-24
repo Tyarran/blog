@@ -10,7 +10,7 @@ python:
 install:
     - pip install pelican
     - "ls -la"
-    - pelican-themes -s $TRAVIS_BUILD_DIR/blog/themes/Colourise11
+    - pelican-themes -s $TRAVIS_BUILD_DIR/themes/Colourise11
 
 notifications:
   email:
