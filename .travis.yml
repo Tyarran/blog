@@ -7,6 +7,9 @@ branches:
 python:
     - 3.4
 
+service:
+    - docker
+
 install:
     - pip install pelican
     - "ls -la"
