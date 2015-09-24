@@ -7,7 +7,7 @@ branches:
 python:
     - 3.4
 
-service:
+services:
     - docker
 
 install:
