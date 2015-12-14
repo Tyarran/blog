@@ -6,7 +6,11 @@ N'appelez pas votre code applicatif dans vos migrations!
 .. role:: underline
     :class: underline
 
-.. image:: http://static.commentcamarche.net/www.commentcamarche.net/faq/images/4675-istock-000008915796xsmall-s-.png
+.. image::  ../pictures/delete.jpg
+   :alt: Delete-Key, portal gda sur Flick
+   :align: center
+   :width: 960px
+   :height: 200px
 
 Un billet en réaction de ce que j'ai pu voir sur un projet cette semaine.
 
