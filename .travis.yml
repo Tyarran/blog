@@ -22,9 +22,9 @@ notifications:
 
 script:
     - pelican -o output/
-    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
     - docker pull rcommande/blog
-    - docker tag -f rcommande/blog rcommande/blog:previous
+    - docker tag rcommande/blog rcommande/blog:previous
     - docker push rcommande/blog
     - docker build -t rcommande/blog $TRAVIS_BUILD_DIR
     - docker push rcommande/blog

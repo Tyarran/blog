@@ -59,7 +59,7 @@ STATIC_PATHS = ["pictures", "images"]
 # FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
 
 # THEME = 'tuxlite_tbs'
-THEME = '/home/romain/pelican-themes/Flex/'
+THEME = 'themes/Flex/'
 # THEME = '/home/romain/pelican-themes/hyde/'
 
 # foobar will not be used, because it's not in caps. All configuration keys
