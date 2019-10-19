@@ -5,7 +5,7 @@ Framasoft a besoin de nous!
 
 .. figure:: http://www.assoces-libres.org/IMG/jpg/Framasoft_BD.jpg
    :align: center
-   :alt:
+   :alt: Framasoft
 
 Framasoft est un site connu depuis de nombreuses années pour ces tutoriels et sa base de donnée de logiciels libres pour Windows, Mac et Linux.
 

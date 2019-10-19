@@ -110,9 +110,8 @@ Ce n'est pas forcement très beau, mais je voulais qu'il soit directement utilis
 
 Voici les résultats de ce petit morceau de code:
 
-.. figure:: {filename}/pictures/this-result.png
-    
-    Les resultats de nos tests.
+.. figure:: {static}/images/this-result.png
+   :alt: Console JavaScript
 
 Aïe ! On constate que "this" n'a pas toujours la même valeur . Si ce résultat vous surprend, la suite devrait vous interesser . Sinon, vous avez au moins le même niveau que moi en Javascript, passez donc votre chemin .
 

@@ -7,7 +7,7 @@ Ce billet va peut être vous paraître complètement dépassé pour certain, mai
 
 .. figure:: http://static.last.fm/depth/header/logo.gif
    :align: center
-   :alt:
+   :alt: Last FM
 
 **Mais c'est quoi LastFM?**
 Last FM c'est une communauté musicale. Le principe est simple: vous écoutez votre musique habituel mais les informations de chaque morceau est envoyé au serveur de lastFM. Le site établit donc votre profil en y intégrant toutes les musiques que vous avez écoutés et créé des statistiques complète sur vos morceaux préférés, vos artistes préféré.

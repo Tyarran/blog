@@ -7,7 +7,7 @@ Prenant depuis peu des cours de MAO (musique assistée par ordinateur), j'ai dé
 
 .. figure:: http://www.homestudio.fr/images_magasin/1788_image_zoom_KEYSTA.JPG
    :align: center
-   :alt:
+   :alt: M-Audio Keystation 49e
 
 Ce clavier me permettra, dans un premier temps, d'entrer mes mélodies plus facilement avec des logiciels tel que Cubase ou Logic Audio (et oui c'est des logiciels Windows mais c'est ceux sur lesquel je suis formé), puis, dans un seconde temps, de tester les alternatives libres fonctionnant sous Linux (et pourquoi pas même le plus rapidement possible :p).
 

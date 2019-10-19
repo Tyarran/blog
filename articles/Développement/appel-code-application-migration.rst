@@ -6,7 +6,7 @@ N'appelez pas votre code applicatif dans vos migrations!
 .. role:: underline
     :class: underline
 
-.. image::  ../pictures/delete.jpg
+.. image::  ../images/delete.jpg
    :alt: Delete-Key, portal gda sur Flick
    :align: center
    :width: 960px

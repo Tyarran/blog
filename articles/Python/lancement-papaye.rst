@@ -7,7 +7,7 @@ Papaye: le clone de PyPi
     :class: underline
 
 
-.. image::  ../pictures/papaya.jpg
+.. image::  ../images/papaya.jpg
    :alt: Papaya de ramyo, sur Flickr
    :align: center
    :width: 960px

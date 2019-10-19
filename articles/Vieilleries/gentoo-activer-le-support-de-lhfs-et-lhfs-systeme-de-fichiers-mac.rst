@@ -9,6 +9,7 @@
 .. image:: http://www.chromebook-linux.com/wp-content/uploads/2011/11/gentoolinux1.png
     :align: center
     :width: 200px
+    :alt: Gentoo Linux
 
 Il peut arriver que l'on ait un voisin qui utilise exclusivement des machines de la firme de la Pomme qui a la gentillesse de nous prêter son disque dur externe ou son IPOD qui utilise un système de fichiers MAC (appelé HFS ou HFS+ pour les intimes). Malheureusement, il est impossible de le lire avec la configuration d'origine (genkernel) de Gentoo.
 PAS DE PANIQUE! Voici la solution.

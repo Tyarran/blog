@@ -5,7 +5,7 @@ Sortie de la bêta 2 du flash player 9 d'Adobe pour Linux
 
 .. figure:: http://www.itportal.it/news/img/1627372006.jpg
    :align: center
-   :alt:
+   :alt: Flash Player
 
 Comme l'on anoncé aujourd'hui les site GNT (`gnt`_) et info-du net (`lire la nouvelle`_) une nouvelle bêta a vu le jour aujourd'hui même.
 Bien que ce n'est rien avoir avec du logiciel libre, il faut bien avouer qu'il était temps qu'une nouvelle version du flash player sorte sur cet OS. La derniere version en date étant la version 7, cela commençait à devenir un problème sur certains sites ayant besoin d'au minimum la version 8 du player `Télécharger Adobe Flash player 9 bêta 2`_

@@ -5,7 +5,7 @@ Astuce: Forcer le "check forced" au prochain démarrage
 
 .. figure:: http://www.webtools.epiknet.org/gfx/outils.gif
    :align: center
-   :alt:
+   :alt: Outils
 
 Une astuce toute simple mais souvent très utile.
 

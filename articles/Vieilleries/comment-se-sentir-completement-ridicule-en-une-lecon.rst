@@ -5,7 +5,7 @@ Comment se sentir complètement ridicule en une leçon...
 
 .. figure:: http://apprendre.free.fr/images/i-accueil/creve-ordi.gif
    :align: center
-   :alt:
+   :alt: L'ordinateur m'a tué
 
 Je vais vous raconter une petite histoire dont je ne suis pas vraiment fier.
 

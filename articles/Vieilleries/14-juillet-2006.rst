@@ -8,7 +8,7 @@ C'est le 14 Juillet!! Un tout petit billet pour montrer que, comme d'habitude, G
 
 .. figure:: http://www.unblogsurlabanquise.org/images/google-14-07.png
    :align: center
-   :alt:
+   :alt: Google
 
 Un petit résumé de la part de wikipedia.org s'impose pour raffraichir nos mémoires:
 

@@ -6,7 +6,7 @@ Papaye 0.2 est arrivé !
 .. role:: strike
     :class: strike
 
-.. image::  ../pictures/artifice.jpg
+.. image::  ../images/artifice.jpg
    :alt: Cannes - Firework 2014 (Italia), Ludovick sur Flickr
    :align: center
    :width: 960px
@@ -37,19 +37,19 @@ La grosse nouveauté c'est donc l'interface qui permet de naviguer dans les paqu
 
 La page d'accueil:
 
-.. image::  ../pictures/papaye0.2_index.png
+.. image::  ../images/papaye0.2_index.png
    :alt: La page d'accueil
    :align: center
 
 La liste des paquets avec un champs de filtrage:
 
-.. image::  ../pictures/papaye0.2_list_packages.png
+.. image::  ../images/papaye0.2_list_packages.png
    :alt: La liste de paquets
    :align: center
 
 Le détail d'un paquet:
 
-.. image::  ../pictures/papaye0.2_package.png
+.. image::  ../images/papaye0.2_package.png
    :alt: La détail d'un paquet
    :align: center
 

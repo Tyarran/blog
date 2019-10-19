@@ -7,7 +7,7 @@ Nous allons maintenant voir comment installer un clavier midi maître M-audio ke
 
 .. figure:: http://www.unblogsurlabanquise.org/images/keystation_emballagep.jpg
    :align: center
-   :alt:
+   :alt: Keystation emballage
 
 Premièrement il faut télécharger le driver MidiSport. Comme l'indique le fichier README, ce driver fonctionne aussi bien pour:
 

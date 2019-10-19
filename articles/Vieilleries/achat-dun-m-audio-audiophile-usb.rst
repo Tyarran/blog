@@ -7,7 +7,7 @@ Après avoir commandé mon clavier midi (voir `commande d'un m-audio keystation 
 
 .. figure:: http://i20.ebayimg.com/02/i/000/8a/5f/bcab_1.JPG
    :align: center
-   :alt:
+   :alt: M-Audio Audiophile USB
 
 Cette fois-ci encore c'est le rapport qualité/prix qui m'interesse.  N'ayant toujours pas reçu mon clavier midi je ne suis toujours pas devenu professionnel ^^. Je me suis tourné, encore une fois, vers M-Audio, et plus précisément vers l'Audiophile USB. Les caractéristiques complètes sont disponibles `ici`_.
 
