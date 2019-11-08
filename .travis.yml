@@ -11,8 +11,7 @@ services:
     - docker
 
 install:
-    - pip install pelican
-    - "ls -la"
+    - pip install pelican markdown
     - pelican-themes -s $TRAVIS_BUILD_DIR/themes/Flex
 
 notifications:
