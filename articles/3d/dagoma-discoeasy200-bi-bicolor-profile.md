@@ -5,6 +5,7 @@ Tags: impression 3d, dagoma, discoeasy 200
 Slug: mes-profils-discoeasy-200
 Authors: Romain Commandé
 Summary: Short version for index and feeds
+Status: draft
 
 # Profils pour la Dagoma Discoeasy 200
 
